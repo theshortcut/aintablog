@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   config.action_controller.cache_store = :file_store, "#{RAILS_ROOT}/public/cache"
   config.action_controller.session_store = :cookie_store
   config.action_controller.session = {
-    :session_key => "_myapp_session",
+    :key => "_myapp_session",
     :secret => (s = ""; 31.times { s << rand(10).to_s }; s)
   }
 

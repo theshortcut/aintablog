@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   private
   
   def expire_path(file)
-    file = File.join(Rails.root.to_str, 'public', file)
+    file = File.join(Rails.root, 'public', file)
     FileUtils.rm_rf(file) if File.exists?(file)
     logger.info("Expired cache: #{file}")
   end

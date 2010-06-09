@@ -200,7 +200,7 @@ private
   
   def wipe_cache!
     %w(/index.html /posts.html /posts /articles.html /articles /snippets.html /snippets /posts.rss /articles.rss /snippets.rss).each do |file|
-      file = File.join(Rails.root.to_str, 'public', file)
+      file = File.join(Rails.root, 'public', file)
       FileUtils.rm_rf(file) if File.exists?(file)
     end
   end
@@ -233,6 +233,6 @@ private
   end
   
   def cache_path(file)
-    File.expand_path(File.join(Rails.root.to_str, 'public', file))
+    File.expand_path(File.join(Rails.root, 'public', file))
   end
 end
